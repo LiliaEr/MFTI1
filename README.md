@@ -288,8 +288,11 @@ checkpoints/
 случайный запрос → top-K совпадений.
 
 **Читает:**  
-checkpoints/arcface_best_fr.pt
+arcface_best_fr.pt (чекпойнт, сохранённый именно для задачи распознавания лиц (inference / verification / identification))
+stacked_hourglass_best.pt
+ce_best_700.pt
 
+Прошу обратить внимание! В коде ссылки на сохраненные модели лежат в ROOT непосредственно.
 Используется для визуальной проверки качества.
 
 ---
@@ -322,8 +325,7 @@ aligned_112/
 
 splits_compact/
 
-checkpoints/ce_best_700.pt
-
+checkpoints/
 
 **Создаёт:**  
 checkpoints/triplet_best.pt
