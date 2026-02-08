@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# IDE
+.idea/
+*.iml
+
+# Data and outputs
+data/
+checkpoints/
+outputs/
+debug/
+
+# Model weights
+*.pt
+*.pth
+checkpoints/
+
+
+# OS files
+.DS_Store
+Thumbs.db
