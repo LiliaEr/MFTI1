@@ -21,36 +21,66 @@
 В репозитории находятся **только код и ноутбуки**:
 
 MFTI1/
+
+├── 1/                       # Примеры изображений (class 1)
+
+├── 2/                       # Примеры изображений (class 2)
+
+├── 3/                       # Примеры изображений (class 3)
+
+
+├── 4/                       # Примеры изображений (class 4)
+
+│   └── *.jpg                # Используются для проверки пайплайна (06_verify_random.ipynb)
 │
-├── cv/
-├── 1/		# папки 1-4 с фото для проверки работы pipline (06_verify_random.ipynb)
-├── 2/
-├── 3/
-├── 4/
-│
+
 ├── csv/
-│ ├── train_align.csv
-│ ├── train_align_112.csv
-│ ├── train_recognition_112.csv
-│ ├── val_align.csv
-│ ├── val_align_112.csv
-│ ├── val_recognition_112.csv
-│ ├── test_align.csv
-│ ├── test_align_112.csv
-│ └── test_recognition_112.csv
+
+│   ├── train_align.csv
+
+│   ├── train_align_112.csv
+
+│   ├── train_recognition_112.csv
+
+│   ├── val_align.csv
+
+│   ├── val_align_112.csv
+
+│   ├── val_recognition_112.csv
+
+│   ├── test_align.csv
+
+│   ├── test_align_112.csv
+
+│   ├── test_recognition_112.csv
+
+│   └── selected_arcface_mainset.csv
 │
-├── 01_photo_selection.ipynb
-├── 02_build_dataset.py
-├── 03_crop.ipynb
-├── 04_Hourglass.ipynb
-├── 05_CE_ArcFace.ipynb
-├── 06_verify_random.ipynb
-├── 07_ir_metric_ipynb.ipynb
-├── 08_triplet.ipynb
+
+├── 01_photo_selection.ipynb     # Отбор изображений
+
+├── 02_build_dataset.py          # Формирование CSV и датасетов
+
+├── 03_crop.ipynb                # Crop лиц
+
+├── 04_Hourglass.ipynb           # Обучение Stacked Hourglass (landmarks)
+
+├── 05_CE_ArcFace.ipynb          # Face Recognition (CE / ArcFace)
+
+├── 06_verify_random.ipynb       # Проверка пайплайна на случайных изображениях
+
+├── 07_ir_metric_ipynb.ipynb     # Identification Rate (IR@k)
+
+├── 08_triplet.ipynb             # Triplet loss эксперименты
 │
-├── face_pipeline.py
-├── pipeline_core.py
+├── face_pipeline.py             # Высокоуровневый face recognition pipeline
+
+├── pipeline_core.py             # Базовые функции пайплайна
+
+│
+
 ├── README.md
+
 └── requirements.txt
 
 
@@ -63,8 +93,11 @@ MFTI1/
 
 arcface_mainset_1/
 │
+
 ├── cropped/  
+
 ├── aligned_112/
+
 └── checkpoints/
 
 
@@ -79,33 +112,61 @@ https://drive.google.com/drive/folders/1FaW2NIQy_sJGdbMVDS04KfEIDngT8iDa?usp=sha
 После подключения Google Drive структура должна выглядеть так:
 
 /content/drive/MyDrive/Colab Notebooks/MFTI/
+
 └── arcface_mainset_1/
+
 ├── cropped/
+
 │ ├── train/
+
 │ ├── val/
+
 │ └── test/
+
 │
+
 ├── aligned_112/
+
 │ ├── train/
+
 │ ├── val/
+
 │ └── test/
+
 │
+
 ├── checkpoints/
+
 │ ├── stacked_hourglass_best.pt
+
 │ ├── ce_best_700.pt
+
 │ ├── arcface_best.pt
+
 │ ├── arcface_best_fr.pt
+
 │ └── triplet_best.pt
+
 │
+
 └── splits_compact/
+
 ├── train_align.csv
+
 ├── train_align_112.csv
+
 ├── train_recognition_112.csv
+
 ├── val_align.csv
+
 ├── val_align_112.csv
+
 ├── val_recognition_112.csv
+
 ├── test_align.csv
+
 ├── test_align_112.csv
+
 └── test_recognition_112.csv
 
 
@@ -139,7 +200,9 @@ https://drive.google.com/drive/folders/1FaW2NIQy_sJGdbMVDS04KfEIDngT8iDa?usp=sha
 Формирование структуры датасета вида:
 
 label/
+
 ├── img1.jpg
+
 ├── img2.jpg
 
 
@@ -164,8 +227,11 @@ arcface_mainset_1/
 
 **Создаёт:**  
 arcface_mainset_1/cropped/
+
 ├── train/
+
 ├── val/
+
 └── test/
 
 
@@ -206,8 +272,11 @@ splits_compact/*_recognition_112.csv
 
 **Создаёт:**  
 checkpoints/
+
 ├── ce_best_700.pt
+
 ├── arcface_best.pt
+
 └── arcface_best_fr.pt
 
 
@@ -250,7 +319,9 @@ checkpoints/*.pt
 
 **Читает:**  
 aligned_112/
+
 splits_compact/
+
 checkpoints/ce_best_700.pt
 
 
